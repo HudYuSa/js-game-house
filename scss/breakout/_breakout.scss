@@ -2,16 +2,15 @@
   font-family: "pixel",serif;
   width: 100%;
   min-height:100vh;
-  background-image: url("https://ik.imagekit.io/hudyusuf/space2_l0SJ3YtqAtU.jpg?updatedAt=1641435055686");
+  background-image: url("https://ik.imagekit.io/hudyusuf/js-game-house/space3_v4w8Rinke?ik-sdk-version=javascript-1.4.3&updatedAt=1642678570561");
   background-size: cover;
   background-color: white;
   padding-top: 3em;
-  text-align: center;
   &__main{
     margin-bottom: 2em;
     &__header{
       &__title{
-        h2{
+        & .breakout-title{
           font-weight: weight(bold);
           letter-spacing: 3px;
           font-size: fontsize(2.5);
@@ -19,8 +18,8 @@
           color: $primary-clr;
           // color: color(120,120,300)
         }
-        h3{
-          @extend h2;
+        & .breakout-score{
+          @extend .breakout-title;
           font-size: fontsize(5);
           margin: 0 .2em;
         }

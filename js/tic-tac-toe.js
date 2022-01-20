@@ -7,7 +7,7 @@ let log = ((v) => {
 
 const accordionHead = document.querySelector(".ttt__main__header__rules__accordion__head")
 const accordionContent = document.querySelector(".ttt__main__header__rules__accordion__content")
-const arrowIcon = accordionHead.querySelector("i")
+const arrowIcon = accordionHead.querySelector("#ttt-icon")
 let headChild = Array.from(accordionContent.children)
 let accStyle = getComputedStyle(accordionContent)
 let accHeight = accStyle.height

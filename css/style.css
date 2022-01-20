@@ -231,7 +231,7 @@
 }
 
 html, body, div, span, applet, object, iframe,
-h1, h2, .ttt__main__header__title h3, .breakout__main__header__title h3, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -444,7 +444,7 @@ table {
   margin-bottom: 2em;
 }
 
-.ttt__main__header__title .score {
+.ttt__main__header__title .ttt-score {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -456,7 +456,7 @@ table {
           align-items: center;
 }
 
-.ttt__main__header__title h2, .ttt__main__header__title h3 {
+.ttt__main__header__title .ttt-title, .ttt__main__header__title h3 {
   font-weight: 700;
   letter-spacing: 3px;
   font-size: clamp(2.5rem, 7.5vw, 3.5rem);
@@ -662,7 +662,7 @@ table {
   font-size: clamp(1.5rem, 6.5vw, 2.5rem);
 }
 
-.ttt__main__content-wrapper .overlay h2, .ttt__main__content-wrapper .overlay .ttt__main__header__title h3, .ttt__main__header__title .ttt__main__content-wrapper .overlay h3, .ttt__main__content-wrapper .overlay .breakout__main__header__title h3, .breakout__main__header__title .ttt__main__content-wrapper .overlay h3 {
+.ttt__main__content-wrapper .overlay h2 {
   pointer-events: none;
 }
 
@@ -950,18 +950,17 @@ table {
   font-family: "pixel",serif;
   width: 100%;
   min-height: 100vh;
-  background-image: url("https://ik.imagekit.io/hudyusuf/space2_l0SJ3YtqAtU.jpg?updatedAt=1641435055686");
+  background-image: url("https://ik.imagekit.io/hudyusuf/js-game-house/space3_v4w8Rinke?ik-sdk-version=javascript-1.4.3&updatedAt=1642678570561");
   background-size: cover;
   background-color: white;
   padding-top: 3em;
-  text-align: center;
 }
 
 .breakout__main {
   margin-bottom: 2em;
 }
 
-.breakout__main__header__title h2, .breakout__main__header__title h3 {
+.breakout__main__header__title .breakout-title, .breakout__main__header__title .breakout-score {
   font-weight: 700;
   letter-spacing: 3px;
   font-size: clamp(2.5rem, 7.5vw, 3.5rem);
@@ -969,7 +968,7 @@ table {
   color: #FFBF1B;
 }
 
-.breakout__main__header__title h3 {
+.breakout__main__header__title .breakout-score {
   font-size: clamp(5rem, 10vw, 6rem);
   margin: 0 .2em;
 }

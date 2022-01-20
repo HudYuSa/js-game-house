@@ -10,7 +10,7 @@
     margin-bottom: 2em;
     &__header{
       &__title{
-        .score{
+        & .ttt-score{
           display: flex;
           justify-content: center;
           align-items: center;
@@ -22,7 +22,7 @@
           //   color: $green-clr;
           // }
         }
-        h2{
+        & .ttt-title{
           font-weight: weight(bold);
           letter-spacing: 3px;
           font-size: fontsize(2.5);
@@ -30,8 +30,8 @@
           color: $primary-clr;
           // color: color(120,120,300)
         }
-        h3{
-          @extend h2;
+        & h3{
+          @extend .ttt-title;
           font-size: fontsize(5);
           margin: 0 .2em;
         }
