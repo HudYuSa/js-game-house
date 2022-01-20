@@ -564,60 +564,60 @@ function reset() {
 // }
 // const increment = increase()
 
-let math = () => {
-  let counter = 0
-  function incre() {
-    function incre1() {
-      counter++
-      return counter
-    }
-    function incre5() {
-      counter += 5
-      return counter
-    }
-    function incre10() {
-      counter += 10
-    }
-    return {
-      incre1,
-      incre5,
-      incre10,
-    }
-  }
-  function decre() {
-    counter--
-  }
-  function divis() {
-    counter /= 2
-  }
-  function multi() {
-    counter *= 2
-  }
-  function getValue() {
-    return counter
-  }
-  return {
-    incre,
-    decre,
-    divis,
-    multi,
-    getValue,
-  }
-}
+// let math = () => {
+//   let counter = 0
+//   function incre() {
+//     function incre1() {
+//       counter++
+//       return counter
+//     }
+//     function incre5() {
+//       counter += 5
+//       return counter
+//     }
+//     function incre10() {
+//       counter += 10
+//     }
+//     return {
+//       incre1,
+//       incre5,
+//       incre10,
+//     }
+//   }
+//   function decre() {
+//     counter--
+//   }
+//   function divis() {
+//     counter /= 2
+//   }
+//   function multi() {
+//     counter *= 2
+//   }
+//   function getValue() {
+//     return counter
+//   }
+//   return {
+//     incre,
+//     decre,
+//     divis,
+//     multi,
+//     getValue,
+//   }
+// }
 
-let operation = math()
-console.log(operation);
-let incre = operation.incre();
-operation.incre().incre10();
-operation.incre().incre10();
-operation.incre().incre10();
-operation.decre();
-operation.decre();
-operation.decre();
-operation.decre();
-operation.decre();
-operation.multi();
-operation.multi();
-operation.incre().incre10();
-operation.divis();
-console.log(operation.getValue());
+// let operation = math()
+// console.log(operation);
+// let incre = operation.incre();
+// operation.incre().incre10();
+// operation.incre().incre10();
+// operation.incre().incre10();
+// operation.decre();
+// operation.decre();
+// operation.decre();
+// operation.decre();
+// operation.decre();
+// operation.multi();
+// operation.multi();
+// operation.incre().incre10();
+// operation.divis();
+// console.log(operation.getValue());

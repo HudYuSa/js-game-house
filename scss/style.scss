@@ -1,4 +1,4 @@
-@import "config","main","ttt/ttt","ttt/ttt-main";
+@import "config","main","ttt/ttt","ttt/ttt-main","breakout/breakout","breakout/breakout-main";
 
 body{
   // font-weight: $weight(bold);
@@ -68,14 +68,5 @@ body{
     &:last-child{
       transform: rotate(-45deg);
     }
-  }
-}
-.other{
-  width:100%;
-  min-height:100vh;
-  background-color: white;
-  h1{
-    text-align: center;
-    font-size: fontsize(3);
   }
 }

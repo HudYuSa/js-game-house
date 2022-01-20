@@ -231,7 +231,7 @@
 }
 
 html, body, div, span, applet, object, iframe,
-h1, h2, .ttt__main__header__title h3, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, .ttt__main__header__title h3, .breakout__main__header__title h3, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -662,7 +662,7 @@ table {
   font-size: clamp(1.5rem, 6.5vw, 2.5rem);
 }
 
-.ttt__main__content-wrapper .overlay h2, .ttt__main__content-wrapper .overlay .ttt__main__header__title h3, .ttt__main__header__title .ttt__main__content-wrapper .overlay h3 {
+.ttt__main__content-wrapper .overlay h2, .ttt__main__content-wrapper .overlay .ttt__main__header__title h3, .ttt__main__header__title .ttt__main__content-wrapper .overlay h3, .ttt__main__content-wrapper .overlay .breakout__main__header__title h3, .breakout__main__header__title .ttt__main__content-wrapper .overlay h3 {
   pointer-events: none;
 }
 
@@ -946,6 +946,95 @@ table {
   border: 1em solid #59dc1d;
 }
 
+.breakout {
+  font-family: "pixel",serif;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("https://ik.imagekit.io/hudyusuf/space2_l0SJ3YtqAtU.jpg?updatedAt=1641435055686");
+  background-size: cover;
+  background-color: white;
+  padding-top: 3em;
+  text-align: center;
+}
+
+.breakout__main {
+  margin-bottom: 2em;
+}
+
+.breakout__main__header__title h2, .breakout__main__header__title h3 {
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: clamp(2.5rem, 7.5vw, 3.5rem);
+  text-align: center;
+  color: #FFBF1B;
+}
+
+.breakout__main__header__title h3 {
+  font-size: clamp(5rem, 10vw, 6rem);
+  margin: 0 .2em;
+}
+
+.breakout__main__header__rules {
+  width: 80%;
+  margin: auto;
+}
+
+.breakout__main__header__rules__accordion__head {
+  font-weight: 700;
+  font-size: clamp(1.8rem, 6.8vw, 2.8rem);
+  color: #59dc1d;
+  letter-spacing: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .5em 0;
+  cursor: pointer;
+}
+
+.breakout__main__header__rules__accordion__head i {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.breakout__main__header__rules__accordion__content {
+  padding: 0 0 3em;
+  overflow: hidden;
+  color: rgba(221, 221, 221, 0.75);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.breakout__main__header__rules__accordion__content.hide {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.breakout__main__header__rules__accordion__content p {
+  font-size: clamp(0.5rem, 5.5vw, 1.5rem);
+  letter-spacing: 1px;
+  font-weight: 200;
+  margin-bottom: .5em;
+}
+
+.breakout__main__header__rules__accordion__content h4 {
+  font-size: clamp(0.5rem, 5.5vw, 1.5rem);
+}
+
+.breakout__main__header__rules__accordion__content h4 a {
+  color: #3050df;
+  text-decoration: none;
+}
+
+.breakout__main__header__rules__accordion__content h4 a:visited {
+  color: #3050df;
+}
+
 body {
   position: relative;
   background-image: url("https://ik.imagekit.io/hudyusuf/space_1__yb3X8EJ2R.png?updatedAt=1641435200148");
@@ -1030,16 +1119,5 @@ body {
 .close-btn span:last-child {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
-}
-
-.other {
-  width: 100%;
-  min-height: 100vh;
-  background-color: white;
-}
-
-.other h1 {
-  text-align: center;
-  font-size: clamp(3rem, 8vw, 4rem);
 }
 /*# sourceMappingURL=style.css.map */

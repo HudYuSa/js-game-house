@@ -1,0 +1,82 @@
+.breakout{
+  font-family: "pixel",serif;
+  width: 100%;
+  min-height:100vh;
+  background-image: url("https://ik.imagekit.io/hudyusuf/space2_l0SJ3YtqAtU.jpg?updatedAt=1641435055686");
+  background-size: cover;
+  background-color: white;
+  padding-top: 3em;
+  text-align: center;
+  &__main{
+    margin-bottom: 2em;
+    &__header{
+      &__title{
+        h2{
+          font-weight: weight(bold);
+          letter-spacing: 3px;
+          font-size: fontsize(2.5);
+          text-align: center;
+          color: $primary-clr;
+          // color: color(120,120,300)
+        }
+        h3{
+          @extend h2;
+          font-size: fontsize(5);
+          margin: 0 .2em;
+        }
+      }
+
+      &__rules{
+        width: 80%;
+        margin: auto;
+        &__accordion{
+          &__head{
+            font-weight: weight(bold);
+            font-size: fontsize(1.8);
+            color: $green-clr;
+            letter-spacing: 2px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .5em 0;
+            cursor: pointer;
+            //  background-color: rgba($blue-clr,.25);
+            i{
+              transition: ease(all,.3s);
+            }
+          }
+          
+          &__content{
+            // prevent transition on first load page
+            &.hide{
+              transition: none !important;
+            }
+            // clip-path: inset(0% 0px 0px 0px);
+            padding: 0 0 3em;
+            overflow: hidden;
+            color: rgba($default-clr, .75);
+            // margin-bottom: 1em;
+            transition: ease(all,.5s);
+            p{
+              font-size: fontsize(.5);
+              letter-spacing: 1px;
+              font-weight: 200;
+              margin-bottom: .5em;
+            }
+            h4{
+              font-size: fontsize(.5); 
+              a{
+                color: $blue-clr;
+                text-decoration: none;
+                &:visited{
+                  color: $blue-clr;
+                }
+              }
+            }
+          }
+          
+        }
+      }
+    }
+  }
+}

@@ -28,8 +28,8 @@ let createBox = ((className, idName, img, text, ratio) => {
 let addBox = [
   // class ,id, img , title , ratio
   createBox("tic-tac-toe", "ttt", "https://ik.imagekit.io/hudyusuf/tic-tac-toe_OZztXKSE4ul.png?updatedAt=1641949737971", "Tic Tac Toe", "normal"),
-  createBox("other-game", "other", "./img/weather.png", "other-game", "normal"),
-  createBox("other-game", "other", "./img/weather.png", "other-game", "normal"),
+  createBox("breakout-game", "breakout", "./img/weather.png", "breakout", "normal"),
+  // createBox("other-game", "other", "./img/weather.png", "other-game", "normal"),
   // createBox("other-game", "other", "./img/calculator.png", "calculator", "height"),
   // createBox("other-game", "other", "./img/calculator.png", "calculator", "height"),
   // createBox("other-game", "other", "./img/weather.png", "other-game", "normal"),
