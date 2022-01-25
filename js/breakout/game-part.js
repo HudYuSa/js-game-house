@@ -24,8 +24,9 @@ function setVariables(inWidth, xP, yP, setDx, setDy) {
 }
 let initX = 1;
 let initY = -1.3;
+let ballWidth = 5;
 // pSpace between red line and the paddle
-setVariables(4, bCanvasW / 2, bCanvasH - pSpace - 10, initX, initY);
+setVariables(ballWidth, bCanvasW / 2, bCanvasH - pSpace - 10, initX, initY);
 drawCircle(x, y, width);
 drawPaddle(px, py, pWidth, pHeight);
 paddleNav();
@@ -186,18 +187,20 @@ function scoreInc() {
 
 function xCollision() {
   // make the ball bounce
-  x + dx >= bCanvasW - 5 || x + dx <= 5 ? (dx = -dx) : dx;
+  x + dx >= bCanvasW - ballWidth - 2 || x + dx <= ballWidth - 2
+    ? (dx = -dx)
+    : dx;
   return dx;
 }
 function yCollision() {
   // make the ball bounce
-  y + dy >= bCanvasH - 2 || y + dy <= 5 ? (dy = -dy) : dy;
+  y + dy >= bCanvasH - 2 || y + dy <= ballWidth - 2 ? (dy = -dy) : dy;
   return dy;
 }
 function paddleCollision() {
   // dari titik mulai paddle sampe titik akhir dan sesuai tinngi paddle
   if (
-    y + dy >= bCanvasH - pSpace &&
+    y + dy >= bCanvasH - pSpace - ballWidth + 2 &&
     y + dy <= bCanvasH - pSpace + -initY + 0.2
   ) {
     if (x + dx >= px && x + dx <= px + pWidth) {
@@ -220,7 +223,7 @@ function paddleCollision() {
       return (dy = -dy);
     }
   }
-  if (x + dx >= px && x + dx <= px + pWidth) {
+  if (x + dx >= px - ballWidth + 2 && x + dx <= px + pWidth + ballWidth - 2) {
     if (y + dy >= py && y + dy <= py + pHeight) {
       return (dx = -dx);
     }
@@ -240,8 +243,9 @@ function ballCollision() {
       const brick = bricks[j][i];
       // console.log(brick);
       if (
-        (y + dy >= brick.y && y + dy <= brick.y + 2) ||
-        (y + dy >= brick.y + brick.h - 2 && y + dy <= brick.y + brick.h)
+        (y + dy >= brick.y - ballWidth + 2 && y + dy <= brick.y + 2) ||
+        (y + dy >= brick.y + brick.h - 2 &&
+          y + dy <= brick.y + brick.h + ballWidth - 2)
       ) {
         if (x + dx >= brick.x && x + dx <= brick.x + brick.w) {
           brick.isVisible = false;
@@ -254,8 +258,9 @@ function ballCollision() {
       }
 
       if (
-        (x + dx >= brick.x && x + dx <= brick.x + 2) ||
-        (x + dx >= brick.x + brick.w - 2 && x + dx <= brick.x + brick.w)
+        (x + dx >= brick.x - ballWidth + 2 && x + dx <= brick.x + 2) ||
+        (x + dx >= brick.x + brick.w - 2 &&
+          x + dx <= brick.x + brick.w + ballWidth - 2)
       ) {
         if (y + dy >= brick.y && y + dy <= brick.y + brick.h) {
           brick.isVisible = false;
@@ -334,7 +339,7 @@ function checkGameOver() {
     } else {
       alert("you are " + (bestScore - score) + " point from the best score");
     }
-    setVariables(5, bCanvasW / 2, bCanvasH - pSpace - 10, initX, initY);
+    setVariables(ballWidth, bCanvasW / 2, bCanvasH - pSpace - 10, initX, initY);
     px = bCanvasW / 2 - pWidth / 2;
     clearInterval(interval2);
     clearInterval(interval);

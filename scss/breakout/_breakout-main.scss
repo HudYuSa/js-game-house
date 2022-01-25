@@ -4,7 +4,16 @@
   justify-content: center;
   align-items: center;
   width: 90%;
-  max-width: 600px;
+  max-width: 450px;
+  @include responsive(320px) {
+    max-width: 250px;
+  }
+  @include responsive(480px) {
+    max-width: 300px;
+  }
+  @include responsive(780px) {
+    max-width: 400px;
+  }
   // background-color: #eee;
   // border: 5px solid $green-clr;
   margin: 2em auto;

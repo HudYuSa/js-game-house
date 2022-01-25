@@ -358,6 +358,8 @@ button {
   margin: 0;
   padding: 0;
   font-family: "Roboto Slab", serif;
+  -webkit-touch-callout: none;
+  user-select: none;
 }
 ::before,
 ::after {

@@ -371,6 +371,11 @@ button {
   margin: 0;
   padding: 0;
   font-family: "Roboto Slab", serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 ::before,
@@ -1129,8 +1134,26 @@ button {
       -ms-flex-align: center;
           align-items: center;
   width: 90%;
-  max-width: 600px;
+  max-width: 450px;
   margin: 2em auto;
+}
+
+@media (min-width: 320px) {
+  .breakout__main__content-wrapper {
+    max-width: 250px;
+  }
+}
+
+@media (min-width: 480px) {
+  .breakout__main__content-wrapper {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 780px) {
+  .breakout__main__content-wrapper {
+    max-width: 400px;
+  }
 }
 
 .breakout__main__content-wrapper__start__btn {
