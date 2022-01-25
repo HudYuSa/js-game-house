@@ -525,7 +525,6 @@ button {
 }
 
 .ttt {
-  display: none;
   font-family: "pixel", serif;
   width: 100%;
   min-height: 100vh;
@@ -1250,6 +1249,9 @@ body {
   width: 100%;
   min-height: 100vh;
   color: #ddd;
+  visibility: hidden;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
 .game-wrapper.reveal {
