@@ -67,6 +67,20 @@ function paddleNav() {
   bRightBtn.addEventListener("mouseup", () => {
     rPressed = false;
   });
+
+  bLeftBtn.addEventListener("touchstart", () => {
+    lPressed = true;
+  });
+  bRightBtn.addEventListener("touchstart", () => {
+    rPressed = true;
+  });
+
+  bLeftBtn.addEventListener("touchend", () => {
+    lPressed = false;
+  });
+  bRightBtn.addEventListener("touchend", () => {
+    rPressed = false;
+  });
 }
 
 function shadowAndColor(color, blur) {
