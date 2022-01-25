@@ -39,7 +39,7 @@ let addBox = [
   createBox(
     "breakout-game",
     "breakout",
-    "./img/weather.png",
+    "https://ik.imagekit.io/hudyusuf/js-game-house/breakout-game-thumbnail_5yREb7JsK.png?ik-sdk-version=javascript-1.4.3&updatedAt=1643078249151",
     "breakout",
     "normal"
   ),
