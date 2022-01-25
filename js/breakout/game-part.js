@@ -25,7 +25,7 @@ function setVariables(inWidth, xP, yP, setDx, setDy) {
 let initX = 1;
 let initY = -1.3;
 // pSpace between red line and the paddle
-setVariables(5, bCanvasW / 2, bCanvasH - pSpace - 10, initX, initY);
+setVariables(4, bCanvasW / 2, bCanvasH - pSpace - 10, initX, initY);
 drawCircle(x, y, width);
 drawPaddle(px, py, pWidth, pHeight);
 paddleNav();
