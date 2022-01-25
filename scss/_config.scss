@@ -1,94 +1,93 @@
-@import url('https://fonts.googleapis.com/css2?family=Vujahday+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
-$default-clr:#ddd;
-$primary-clr: #FFBF1B;
-$primary2-clr:#ff9e00;
-$secondary-clr:rgb(36, 16, 56);
-$green-clr:#59dc1d;
-$blue-clr:#3050df;
-$dark-clr:#111;
+@import url("https://fonts.googleapis.com/css2?family=Vujahday+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+$default-clr: #ddd;
+$primary-clr: #ffbf1b;
+$primary2-clr: #ff9e00;
+$secondary-clr: rgb(36, 16, 56);
+$green-clr: #59dc1d;
+$blue-clr: #3050df;
+$dark-clr: #111;
+$red-clr: rgb(172, 27, 11);
 
-$transition:(
-  "transition.5":all .5s ease,
-  "transition1":all 1s ease,
-  "transition1.5":all 1.5s ease,
-  "transition2":all 2s ease,
+$transition: (
+  "transition.5": all 0.5s ease,
+  "transition1": all 1s ease,
+  "transition1.5": all 1.5s ease,
+  "transition2": all 2s ease,
 );
 
-$weight:(
-  "regular":300,
-  "medium":500,
-  "bold":700,
-  "bolder":900,
-  );
-  $size:(
-    ".5rem":clamp(.5rem,3.5vw,1.5rem),
-    "1rem":clamp(1rem,4vw,2rem),
-  "1.5rem":clamp(1.5rem,4.5vw,2.5rem),
-  "2rem":clamp(2rem,5vw,3rem),
-  "2.5rem":clamp(2.5rem,5.5vw,3.5rem),
-  "3rem":clamp(3rem,6vw,4rem),
-  "3.5rem":clamp(3.5rem,6.5vw,4.5rem),
-  "4rem":clamp(4rem,7vw,5rem),
-  "4.5rem":clamp(4.5rem,7.5vw,5.5rem),
-  "5rem":clamp(5rem,8vw,6rem),
-  );
-  
-  
-  
-  // @for $i from 1 through 3{
-    //   #$clr#{$i}
-    // };
-    // @for $i from 1 through 4 {
-      //   .menu-nav__item:nth-child(#{$i}){
-        //     transition-delay: ($i * .1s) + .15s;
-        //   }
-        // }
-        
-        @function fontsize($min){
-          $fontsize:clamp($min+ rem,($min + 5)+vw,($min + 1)+rem);
-          @return $fontsize;
-        }
-        // @function fontsizes($min){
-          //   $fontsize:clamp($min+ rem,($min + 2)+vw,($min + .5)+rem);
-          //   @return $fontsize;
-          // }
-          // @function fontsizeb($min){
-            //   $fontsize:clamp($min+ rem,($min + 4)+vw,($min + 1.5)+rem);
-            //   @return $fontsize;
-            // }
-            
-            @function color($r,$g,$b){
-              $color:rgb($r,$g,$b);
-              @return $color;
-            }
-            @function weight($font-weight){
-              @return map-get($weight, $font-weight );
-            }
-            @function font-size($font-size){
-              @return map-get($size, $font-size );
-            }
-            @function duration($duration) {
-              @return map-get($transition, $duration);
-            }
-            
-            // transition function
-            @function ease($property,$timing,){
-              @return $property $timing ease;
-            }
-            @function ease-in($property,$timing,){
-              @return $property $timing ease-in;
-            }
-            @function ease-out($property,$timing,){
-              @return $property $timing ease-out;
-            }
-            @function ease-in-out($property,$timing,){
-              @return $property $timing ease-in-out;
-            }
-            
-            @mixin flex-center-all {
-              display: flex;
+$weight: (
+  "regular": 300,
+  "medium": 500,
+  "bold": 700,
+  "bolder": 900,
+);
+$size: (
+  ".5rem": clamp(0.5rem, 3.5vw, 1.5rem),
+  "1rem": clamp(1rem, 4vw, 2rem),
+  "1.5rem": clamp(1.5rem, 4.5vw, 2.5rem),
+  "2rem": clamp(2rem, 5vw, 3rem),
+  "2.5rem": clamp(2.5rem, 5.5vw, 3.5rem),
+  "3rem": clamp(3rem, 6vw, 4rem),
+  "3.5rem": clamp(3.5rem, 6.5vw, 4.5rem),
+  "4rem": clamp(4rem, 7vw, 5rem),
+  "4.5rem": clamp(4.5rem, 7.5vw, 5.5rem),
+  "5rem": clamp(5rem, 8vw, 6rem),
+);
+
+// @for $i from 1 through 3{
+//   #$clr#{$i}
+// };
+// @for $i from 1 through 4 {
+//   .menu-nav__item:nth-child(#{$i}){
+//     transition-delay: ($i * .1s) + .15s;
+//   }
+// }
+
+@function fontsize($min) {
+  $fontsize: clamp($min + rem, ($min + 5) + vw, ($min + 1) + rem);
+  @return $fontsize;
+}
+@function fontsizeb($min2) {
+  $fontsize2: clamp($min2 + rem, ($min2 + 8) + vw, ($min2 + 3) + rem);
+  @return $fontsize2;
+}
+// @function fontsizeb($min){
+//   $fontsize:clamp($min+ rem,($min + 4)+vw,($min + 1.5)+rem);
+//   @return $fontsize;
+// }
+
+@function color($r, $g, $b) {
+  $color: rgb($r, $g, $b);
+  @return $color;
+}
+@function weight($font-weight) {
+  @return map-get($weight, $font-weight);
+}
+@function font-size($font-size) {
+  @return map-get($size, $font-size);
+}
+@function duration($duration) {
+  @return map-get($transition, $duration);
+}
+
+// transition function
+@function ease($property, $timing) {
+  @return $property $timing ease;
+}
+@function ease-in($property2, $timing2) {
+  @return $property2 $timing2 ease-in;
+}
+@function ease-out($property3, $timing3) {
+  @return $property3 $timing3 ease-out;
+}
+@function ease-in-out($property4, $timing4) {
+  @return $property4 $timing4 ease-in-out;
+}
+
+@mixin flex-center-all {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -101,7 +100,7 @@ $weight:(
   right: 0;
   bottom: 0;
 }
-@mixin absolute-adjust($all){
+@mixin absolute-adjust($all) {
   top: $all;
   bottom: $all;
   left: $all;
@@ -113,158 +112,264 @@ $weight:(
   align-items: center;
 }
 @mixin responsive($size) {
-  @media (min-width:$size) {
+  @media (min-width: $size) {
     @content;
   }
 }
 @mixin btn($color) {
   box-shadow: 0px 0px 7px 2.5px $color;
-  &:hover{
+  &:hover {
     box-shadow: 0px 0px 7px 2.5px $color;
   }
-  &:active{
-    transform: scale(.98);
+  &:active {
+    transform: scale(0.98);
     box-shadow: 0px 0px 4px 1.5px $color;
   }
 }
 
 @keyframes scale {
-  from{transform: scale(.98)}  
-  to{transform:scale(1.02)}
+  from {
+    transform: scale(0.98);
+  }
+  to {
+    transform: scale(1.02);
+  }
 }
 @keyframes scale-up {
-  0%{transform: scale(0);}
-  100%{transform:scale(1)}
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 @keyframes scale-up1 {
-  0%{}
-  100%{transform: rotate(45deg) scale(1)}
+  0% {
+  }
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
 }
 @keyframes scale-up2 {
-  0%{}
-  100%{transform: rotate(-45deg) scale(1)}
+  0% {
+  }
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
 }
 @keyframes blur {
-  0%{
+  0% {
     opacity: 1;
   }
-  99%{
+  99% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 0;
     display: none !important;
     pointer-events: none;
   }
-  
 }
 @keyframes opacity {
-  0%{
+  0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
 @keyframes opacity-up {
-  0%{
-    transform: translate(-50%,50%);
+  0% {
+    transform: translate(-50%, 50%);
     opacity: 0;
   }
-  20%{
-    transform: translate(-50%,0%);
+  20% {
+    transform: translate(-50%, 0%);
     opacity: 1;
   }
-  80%{
-    transform: translate(-50%,0%);
+  80% {
+    transform: translate(-50%, 0%);
     opacity: 1;
   }
-  100%{
-    transform: translate(-50%,50%);
+  100% {
+    transform: translate(-50%, 50%);
     opacity: 0;
-  } 
+  }
 }
 
-@keyframes reveal{
-  0%{
+@keyframes reveal {
+  0% {
     transform: translateY(-100%);
     visibility: hidden;
   }
-  100%{
+  100% {
     transform: translateY(0);
     visibility: visible;
   }
 }
-@keyframes hidden{
-  0%{
+@keyframes hidden {
+  0% {
     transform: translateY(0);
     visibility: visible;
   }
-  100%{
+  100% {
     transform: translateY(-100%);
     visibility: hidden;
   }
 }
-
 
 @font-face {
-  font-family:"pixel" ;
+  font-family: "pixel";
   src: url(../font/Pixeboy-z8XGD.ttf);
   src: url(../font/Pixeboy-z8XGD.woff);
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 body {
   line-height: 1;
 }
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
   border-collapse: collapse;
-	border-spacing: 0;
+  border-spacing: 0;
+}
+button {
+  all: unset;
 }
 
-*{
+* {
   // font-size: 1px;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
 }
 ::before,
-::after{
+::after {
   box-sizing: border-box;
+}
+
+.rotate {
+  transform: rotateX(180deg);
+}
+
+.grow {
+  // height: min(5rem);
+  height: minmax(5rem, 10rem);
+  // animation: grow 1s ease  ;
 }

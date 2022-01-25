@@ -1,16 +1,16 @@
-.breakout{
-  font-family: "pixel",serif;
+.breakout {
+  font-family: "pixel", serif;
   width: 100%;
-  min-height:100vh;
+  min-height: 100vh;
   background-image: url("https://ik.imagekit.io/hudyusuf/js-game-house/space3_v4w8Rinke?ik-sdk-version=javascript-1.4.3&updatedAt=1642678570561");
   background-size: cover;
   background-color: white;
-  padding-top: 3em;
-  &__main{
-    margin-bottom: 2em;
-    &__header{
-      &__title{
-        & .breakout-title{
+  padding: 3em 0 5em;
+  &__main {
+    // margin-bottom: 2em;
+    &__header {
+      &__title {
+        & .breakout-title {
           font-weight: weight(bold);
           letter-spacing: 3px;
           font-size: fontsize(2.5);
@@ -18,18 +18,18 @@
           color: $primary-clr;
           // color: color(120,120,300)
         }
-        & .breakout-score{
+        & .breakout-score {
           @extend .breakout-title;
           font-size: fontsize(5);
-          margin: 0 .2em;
+          margin: 0 0.2em;
         }
       }
 
-      &__rules{
+      &__rules {
         width: 80%;
         margin: auto;
-        &__accordion{
-          &__head{
+        &__accordion {
+          &__head {
             font-weight: weight(bold);
             font-size: fontsize(1.8);
             color: $green-clr;
@@ -37,43 +37,42 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: .5em 0;
+            padding: 0.5em 0;
             cursor: pointer;
             //  background-color: rgba($blue-clr,.25);
-            i{
-              transition: ease(all,.3s);
+            i {
+              transition: ease(all, 0.3s);
             }
           }
-          
-          &__content{
+
+          &__content {
             // prevent transition on first load page
-            &.hide{
+            &.hide {
               transition: none !important;
             }
             // clip-path: inset(0% 0px 0px 0px);
             padding: 0 0 3em;
             overflow: hidden;
-            color: rgba($default-clr, .75);
+            color: rgba($default-clr, 0.75);
             // margin-bottom: 1em;
-            transition: ease(all,.5s);
-            p{
-              font-size: fontsize(.5);
+            transition: ease(all, 0.75s);
+            p {
+              font-size: fontsize(0.5);
               letter-spacing: 1px;
               font-weight: 200;
-              margin-bottom: .5em;
+              margin-bottom: 0.5em;
             }
-            h4{
-              font-size: fontsize(.5); 
-              a{
+            h4 {
+              font-size: fontsize(0.5);
+              a {
                 color: $blue-clr;
                 text-decoration: none;
-                &:visited{
+                &:visited {
                   color: $blue-clr;
                 }
               }
             }
           }
-          
         }
       }
     }

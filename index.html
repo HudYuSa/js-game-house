@@ -1,114 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/icons8-game-64.png"
+    />
+    <title>Javascript Game House</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/91131540a2.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"> -->
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/icons8-game-64.png">
-  <title>Javascript Game House</title>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://kit.fontawesome.com/91131540a2.js" crossorigin="anonymous"></script>
-</head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">LOGIC GAME</h1>
+    </header>
+    <main class="main" id="home-page">
+      <div class="main__box-wrapper">
+        <!-- box are created dynamically -->
+      </div>
+    </main>
 
-<body>
-
-  <header class="header">
-    <h1 class="header__title">LOGIC GAME</h1>
-  </header>
-  <main class="main">
-    <div class="main__box-wrapper">
-      <!-- box are created dynamically -->
-    </div>
-  </main>
-
-  <aside class="game-wrapper">
-    <div class="close-btn">
-      <span></span>
-      <span></span>
-    </div>
-    <section class="ttt">
-      <div class="ttt__main">
-        <div class="ttt__main__header">
-          <div class="ttt__main__header__title">
-            <h2 class="ttt-title">Tic Tac Toe</h2>
-            <div class="ttt-score">
-              <h3 class="score__home">0</h3>
-              <h3 class="score__away">0</h3>
+    <aside class="game-wrapper">
+      <a href="#home-page"></a>
+      <div class="close-btn">
+        <span></span>
+        <span></span>
+      </div>
+      <section id="ttt" class="ttt">
+        <div class="ttt__main">
+          <div class="ttt__main__header">
+            <div class="ttt__main__header__title">
+              <h2 class="ttt-title">Tic Tac Toe</h2>
+              <div class="ttt-score">
+                <h3 class="score__home">0</h3>
+                <h3 class="score__away">0</h3>
+              </div>
             </div>
-          </div>
-          <div class="ttt__main__header__rules">
-            <div class="ttt__main__header__rules__accordion" id="accordion1">
-              <div class="ttt__main__header__rules__accordion__head">
-                <h3>Tic Tac Toe rules</h2>
+            <div class="ttt__main__header__rules">
+              <div class="ttt__main__header__rules__accordion" id="accordion1">
+                <div class="ttt__main__header__rules__accordion__head">
+                  <h2>Tic Tac Toe rules</h2>
                   <i class="fas fa-chevron-up" id="ttt-icon"></i>
-              </div>
-              <div class="ttt__main__header__rules__accordion__content hide">
-                <p>
-                  Tic-tac-toe is played on a three-by-three grid by two players, who alternately place the marks X and O
-                  in one of the
-                  nine spaces in the grid.
-                </p>
-                <p>
-                  who ever make horizontal, vertical, or diagonal line the symbol wins the game
-                </p>
-                <h4>source : <a href="https://en.wikipedia.org/wiki/Tic-tac-toe#Gameplay"
-                    target="_blank">Wikipedia.org</a>
-                </h4>
+                </div>
+                <div class="ttt__main__header__rules__accordion__content hide">
+                  <p>
+                    Tic-tac-toe is played on a three-by-three grid by two
+                    players, who alternately place the marks X and O in one of
+                    the nine spaces in the grid.
+                  </p>
+                  <p>
+                    who ever make horizontal, vertical, or diagonal line the
+                    symbol wins the game
+                  </p>
+                  <h4>
+                    source :
+                    <a
+                      href="https://en.wikipedia.org/wiki/Tic-tac-toe#Gameplay"
+                      target="_blank"
+                      >Wikipedia.org</a
+                    >
+                  </h4>
+                </div>
               </div>
             </div>
-
           </div>
-        </div>
 
-        <div class="ttt__main__variable">
-          <div class="ttt__main__variable__dificulty">
-            <h3>dificulty :</h3>
-            <div class="ttt__main__variable__dificulty__input-group">
-              <input class="dificulty easy" type="radio" name="dificulty" id="easy" checked>
-              <label for="easy">easy</label>
-              <!-- <input class="dificulty medium" type="radio" name="dificulty" id="medium">
+          <div class="ttt__main__variable">
+            <div class="ttt__main__variable__dificulty">
+              <h3>dificulty :</h3>
+              <div class="ttt__main__variable__dificulty__input-group">
+                <input
+                  class="dificulty easy"
+                  type="radio"
+                  name="dificulty"
+                  id="easy"
+                  checked
+                />
+                <label for="easy">easy</label>
+                <!-- <input class="dificulty medium" type="radio" name="dificulty" id="medium">
               <label for="medium">medium</label> -->
-              <!-- <input class="dificulty hard" type="radio" name="dificulty" id="hard">
+                <!-- <input class="dificulty hard" type="radio" name="dificulty" id="hard">
               <label for="hard">hard</label> -->
+              </div>
+            </div>
+            <div class="ttt__main__variable__color">
+              <h3>player :</h3>
+              <div class="ttt__main__variable__color__input-group">
+                <input
+                  type="radio"
+                  name="color"
+                  id="green"
+                  class="input-circle shape"
+                />
+                <label for="green">circle</label>
+                <input
+                  type="radio"
+                  name="color"
+                  id="blue"
+                  class="input-cross shape"
+                  checked
+                />
+                <label for="blue">cross</label>
+              </div>
             </div>
           </div>
-          <div class="ttt__main__variable__color">
-            <h3>player :</h3>
-            <div class="ttt__main__variable__color__input-group">
-              <input type="radio" name="color" id="green" class="input-circle shape">
-              <label for="green">circle</label>
-              <input type="radio" name="color" id="blue" class="input-cross shape" checked>
-              <label for="blue">cross</label>
+
+          <div class="ttt__main__content-wrapper">
+            <div class="overlay">
+              <button class="single">singleplayer</button>
+              <h2 class="result__text">Start Game</h2>
+              <button class="multiplayer">multiplayer</button>
             </div>
+
+            <div class="ttt__main__content-wrapper__cell" id="0"></div>
+            <div class="ttt__main__content-wrapper__cell" id="1"></div>
+            <div class="ttt__main__content-wrapper__cell" id="2"></div>
+            <div class="ttt__main__content-wrapper__cell" id="3"></div>
+            <div class="ttt__main__content-wrapper__cell" id="4"></div>
+            <div class="ttt__main__content-wrapper__cell" id="5"></div>
+            <div class="ttt__main__content-wrapper__cell" id="6"></div>
+            <div class="ttt__main__content-wrapper__cell" id="7"></div>
+            <div class="ttt__main__content-wrapper__cell" id="8"></div>
+          </div>
+          <div class="ttt__main__button-wrapper">
+            <button class="restart-btn">reset</button>
+            <button class="save-btn">save</button>
+            <h4 class="saved-message">score saved</h4>
           </div>
         </div>
-
-        <div class="ttt__main__content-wrapper">
-          <div class="overlay">
-            <button class="single">singleplayer</button>
-            <h2 class="result__text">Start Game</h2>
-            <button class="multiplayer">multiplayer</button>
-          </div>
-
-          <div class="ttt__main__content-wrapper__cell" id="0"></div>
-          <div class="ttt__main__content-wrapper__cell" id="1"></div>
-          <div class="ttt__main__content-wrapper__cell" id="2"></div>
-          <div class="ttt__main__content-wrapper__cell" id="3"></div>
-          <div class="ttt__main__content-wrapper__cell" id="4"></div>
-          <div class="ttt__main__content-wrapper__cell" id="5"></div>
-          <div class="ttt__main__content-wrapper__cell" id="6"></div>
-          <div class="ttt__main__content-wrapper__cell" id="7"></div>
-          <div class="ttt__main__content-wrapper__cell" id="8"></div>
-        </div>
-        <div class="ttt__main__button-wrapper">
-          <button class="restart-btn">reset</button>
-          <button class="save-btn">save</button>
-          <h4 class="saved-message">score saved</h4>
-        </div>
-      </div>
-      <!-- <aside class="code">
+        <!-- <aside class="code">
         <img src="" alt="">
         <div class="source">
           <h4><a href=""></a></h4>
@@ -116,65 +146,99 @@
           <h4><a href=""></a></h4>
         </div>
       </aside> -->
-    </section>
+      </section>
 
-
-    <section class="breakout">
-      <div class="breakout__main">
-        <div class="breakout__main__header">
-
-          <div class="breakout__main__header__title">
-            <h2 class="breakout-title">breakout</h2>
-            <h3 class="breakout-score">0</h3>
-          </div>
-          <div class="breakout__main__header__rules">
-            <div class="breakout__main__header__rules__accordion" id="accordion1">
-              <div class="breakout__main__header__rules__accordion__head">
-                <h3>breakout description</h2>
+      <section id="breakout" class="breakout">
+        <div class="breakout__main">
+          <div class="breakout__main__header">
+            <div class="breakout__main__header__title">
+              <h2 class="breakout-title">breakout</h2>
+              <h3 class="breakout-score">0</h3>
+            </div>
+            <div class="breakout__main__header__rules">
+              <div
+                class="breakout__main__header__rules__accordion"
+                id="accordion1"
+              >
+                <div class="breakout__main__header__rules__accordion__head">
+                  <h2>breakout description</h2>
                   <i class="fas fa-chevron-up" id="breakout-icon"></i>
-              </div>
-              <div class="breakout__main__header__rules__accordion__content hide">
-                <p>
-                  Breakout begins with eight rows of bricks, with each two rows a different kinds of color. The color
-                  order from the bottom up is yellow, green, orange and red.
-                </p>
-                <p>
-                  Using a single ball, the player must knock down as many
-                  bricks as possible
-                  by using the walls and/or the paddle below to hit the ball against the bricks and eliminate them. If
-                  the player's paddle
-                  misses the ball's rebound, they will lose a turn.
-                </p>
-                <p>
-                  The player has three turns to try to clear two
-                  screens of bricks.
-                  Yellow bricks earn one point each, green bricks earn three points, orange bricks earn five points and
-                  the top-level red
-                  bricks score seven points each. The paddle shrinks to one-half its size after the ball has broken
-                  through the red row
-                  and hit the upper wall.
-                </p>
-                <p>
-                  Ball speed increases at specific intervals: after four hits, after twelve
-                  hits, and after making
-                  contact with the orange and red rows.
-                </p>
-                <h4>source : <a href="https://en.wikipedia.org/wiki/Breakout_(video_game)#Gameplay"
-                    target="_blank">Wikipedia.org</a>
-                </h4>
+                </div>
+                <div
+                  class="breakout__main__header__rules__accordion__content hide"
+                >
+                  <p>
+                    Breakout begins with eight rows of bricks, with each two
+                    rows a different kinds of color. The color order from the
+                    bottom up is yellow, green, orange and red.
+                  </p>
+                  <p>
+                    Using a single ball, the player must knock down as many
+                    bricks as possible by using the walls and/or the paddle
+                    below to hit the ball against the bricks and eliminate them.
+                    If the player's paddle misses the ball's rebound, they will
+                    lose a turn.
+                  </p>
+                  <p>
+                    The player has three turns to try to clear two screens of
+                    bricks. Yellow bricks earn one point each, green bricks earn
+                    three points, orange bricks earn five points and the
+                    top-level red bricks score seven points each. The paddle
+                    shrinks to one-half its size after the ball has broken
+                    through the red row and hit the upper wall.
+                  </p>
+                  <p>
+                    Ball speed increases at specific intervals: after four hits,
+                    after twelve hits, and after making contact with the orange
+                    and red rows.
+                  </p>
+                  <h4>
+                    source :
+                    <a
+                      href="https://en.wikipedia.org/wiki/Breakout_(video_game)#Gameplay"
+                      target="_blank"
+                      >Wikipedia.org</a
+                    >
+                  </h4>
+                </div>
               </div>
             </div>
 
+            <div class="breakout__main__content-wrapper">
+              <div class="breakout__main__content-wrapper__start">
+                <button
+                  id="b-start-btn"
+                  class="breakout__main__content-wrapper__start__btn"
+                >
+                  Start Game
+                </button>
+              </div>
+              <canvas
+                class="breakout__main__content-wrapper__canvas"
+                id="breakout-canvas"
+                height="400"
+                width="300"
+                >Sorry this game are not supported on your device</canvas
+              >
+              <div class="breakout__main__content-wrapper__control">
+                <button
+                  id="b-left"
+                  class="controller-b breakout__main__content-wrapper__control__left"
+                >
+                  <i class="fa-solid fa-circle-chevron-left"></i>
+                </button>
+                <button
+                  id="b-right"
+                  class="controller-b breakout__main__content-wrapper__control__right"
+                >
+                  <i class="fa-solid fa-circle-chevron-right"></i>
+                </button>
+              </div>
+            </div>
           </div>
-
-          <div class="breakout__main__content-wrapper">
-
-          </div>
-
         </div>
-      </div>
 
-      <!-- <aside class="code">
+        <!-- <aside class="code">
         <img src="" alt="">
         <div class="source">
           <h4><a href=""></a></h4>
@@ -182,12 +246,12 @@
           <h4><a href=""></a></h4>
         </div>
       </aside> -->
-    </section>
-  </aside>
+      </section>
+    </aside>
 
-  <script src="js/script.js"></script>
-  <script src="js/tic-tac-toe.js"></script>
-  <script src="js/breakout.js"></script>
-</body>
-
+    <script src="js/script.js"></script>
+    <script src="js/tic-tac-toe.js"></script>
+    <script src="js/breakout/breakout.js"></script>
+    <script src="js/breakout/game-part.js"></script>
+  </body>
 </html>

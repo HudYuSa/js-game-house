@@ -1,6 +1,7 @@
-@import "config","main","ttt/ttt","ttt/ttt-main","breakout/breakout","breakout/breakout-main";
+@import "config", "main", "ttt/ttt", "ttt/ttt-main", "breakout/breakout",
+  "breakout/breakout-main";
 
-body{
+body {
   // font-weight: $weight(bold);
   position: relative;
   background-image: url("https://ik.imagekit.io/hudyusuf/space_1__yb3X8EJ2R.png?updatedAt=1641435200148");
@@ -8,64 +9,61 @@ body{
   background-position: center;
 }
 
-.header{
+.header {
   position: relative;
   background-color: $primary-clr;
 
-  &__title{
+  &__title {
     // position: relative;
     text-align: center;
-    font-size:  fontsize(3);
-    font-family: "Roboto Slab",serif;
+    font-size: fontsize(3);
+    font-family: "Roboto Slab", serif;
     font-weight: weight(bolder);
-    padding: .5em;
-    background-image: linear-gradient(90deg,
-    $blue-clr 0%,
-    $green-clr 100%,
-    );
+    padding: 0.5em;
+    background-image: linear-gradient(90deg, $blue-clr 0%, $green-clr 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }
 
-.game-wrapper{
+.game-wrapper {
   position: absolute;
   top: 0;
   width: 100%;
-  min-height:100vh;
+  min-height: 100vh;
   color: $default-clr;
-  visibility: hidden;
-  transform: translateY(-100%);
-  &.reveal{
+  // visibility: hidden;
+  // transform: translateY(-100%);
+  &.reveal {
     animation: reveal 1s ease-in-out 1 forwards;
   }
-  &.hidden{
+  &.hidden {
     animation: hidden 1s ease-in-out 1 forwards;
   }
 }
-.close-btn{
+.close-btn {
   cursor: pointer;
   position: absolute;
   top: 1em;
   right: 1em;
-  width: clamp(25px,2vw,50px);
-  height: clamp(25px,2vw,50px);
+  width: clamp(25px, 2vw, 50px);
+  height: clamp(25px, 2vw, 50px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  & span{
+  & span {
     display: block;
     background-color: rgb(212, 36, 16);
     width: 100%;
     height: 15%;
     position: absolute;
 
-    &:first-child{
+    &:first-child {
       transform: rotate(45deg);
     }
-    &:last-child{
+    &:last-child {
       transform: rotate(-45deg);
     }
   }
