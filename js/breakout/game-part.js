@@ -397,7 +397,7 @@ function bricksDown() {
 
       lineGameOver(lastLine);
       checkGameOver();
-    }, 2000);
+    }, 6000);
   }
 }
 
