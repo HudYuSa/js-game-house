@@ -13,7 +13,10 @@ pWidth = 50;
 pHeight = 7;
 let pSpace = 22;
 py = bCanvasH - pSpace;
-px = bCanvasW / 2 - pWidth / 2 + 20;
+px = bCanvasW / 2 - pWidth / 2;
+
+let lastLine;
+let dangerLine = bCanvasH - pSpace - 50;
 
 function setVariables(inWidth, xP, yP, setDx, setDy) {
   width = inWidth;
@@ -30,6 +33,7 @@ setVariables(ballWidth, bCanvasW / 2, bCanvasH - pSpace - 10, initX, initY);
 drawCircle(x, y, width);
 drawPaddle(px, py, pWidth, pHeight);
 paddleNav();
+drawLastLine();
 // startGame(dx, dy);
 
 // paddle navigation
@@ -107,17 +111,17 @@ function drawCircle(x, y, width) {
   ctx.closePath();
 }
 
-let brickW = 32.5;
+let brickW = 35;
 let brickH = 10;
-let brickOffsetX = 15;
-let brickOffsetY = 20;
+let brickOffsetX = 25;
+let brickOffsetY = 25;
 // fx = first x cordinat fy = first y cordinat
-let fX = 15;
-let fY = -975;
+let fX = 12.5;
+let fY = -1250;
 // let fY = 5;
 let bricks = [];
 let brickRow = 50;
-let brickColumn = 6;
+let brickColumn = 5;
 
 createBrickArray();
 drawBricks(fX, fY, brickW, brickH, brickOffsetX, brickOffsetY);
@@ -169,20 +173,25 @@ const scoreEl = document.querySelector(".breakout-score");
 let interval4;
 let score = 0;
 let bestScore = 0;
+let store;
 
-let bestScoreData = JSON.parse(localStorage.getItem("bestScore"));
-if (bestScoreData) {
-  bestScore = bestScoreData;
+if (localStorage.getItem("bestScore")) {
+  store = true;
+} else {
+  store = false;
+}
+if (!store) {
+  localStorage.setItem("bestScore", 0);
 }
 scoreEl.textContent = bestScore;
 function scoreInc() {
-  interval4 = setInterval(() => {
-    score++;
-    scoreEl.textContent = score;
-    // if (score > bestScore) bestScore = score;
-    console.log(bestScore);
-    console.log(score);
-  }, 1000);
+  if (!interval4) {
+    interval4 = setInterval(() => {
+      score++;
+      scoreEl.textContent = score;
+      // if (score > bestScore) bestScore = score;
+    }, 1000);
+  }
 }
 
 function xCollision() {
@@ -200,7 +209,7 @@ function yCollision() {
 function paddleCollision() {
   // dari titik mulai paddle sampe titik akhir dan sesuai tinngi paddle
   if (
-    y + dy >= bCanvasH - pSpace - ballWidth + 2 &&
+    y + dy >= bCanvasH - pSpace - ballWidth + 3 &&
     y + dy <= bCanvasH - pSpace + -initY + 0.2
   ) {
     if (x + dx >= px && x + dx <= px + pWidth) {
@@ -243,40 +252,41 @@ function ballCollision() {
       const brick = bricks[j][i];
       // console.log(brick);
       if (
-        (y + dy >= brick.y - ballWidth + 2 && y + dy <= brick.y + 2) ||
+        (y + dy >= brick.y - ballWidth + 1 && y + dy <= brick.y + 2) ||
         (y + dy >= brick.y + brick.h - 2 &&
-          y + dy <= brick.y + brick.h + ballWidth - 2)
+          y + dy <= brick.y + brick.h + ballWidth - 1)
       ) {
-        if (x + dx >= brick.x && x + dx <= brick.x + brick.w) {
+        if (
+          x + dx >= brick.x - ballWidth + 2 &&
+          x + dx <= brick.x + brick.w + ballWidth - 2
+        ) {
           brick.isVisible = false;
           brick.x = 0;
           brick.y = 0;
           dy = -dy;
           // console.log(bricks[j][i]);
-          console.log(bricks[j]);
+          // console.log(bricks[j]);
         }
       }
 
       if (
-        (x + dx >= brick.x - ballWidth + 2 && x + dx <= brick.x + 2) ||
+        (x + dx >= brick.x - ballWidth + 1 && x + dx <= brick.x + 2) ||
         (x + dx >= brick.x + brick.w - 2 &&
-          x + dx <= brick.x + brick.w + ballWidth - 2)
+          x + dx <= brick.x + brick.w + ballWidth - 1)
       ) {
-        if (y + dy >= brick.y && y + dy <= brick.y + brick.h) {
+        if (
+          y + dy >= brick.y - ballWidth + 2 &&
+          y + dy <= brick.y + brick.h + ballWidth - 2
+        ) {
           brick.isVisible = false;
           brick.x = 0;
           brick.y = 0;
           dx = -dx;
-          console.log(bricks);
+          // console.log(bricks);
         }
       }
     }
   }
-  // bricks.forEach((row, idx) => {
-  //   row.forEach((brick) => {
-  //     console.log(brick);
-  //   });
-  // });
 }
 
 let pS = 2;
@@ -288,7 +298,7 @@ function speedUp() {
   if (!interval2) {
     interval2 = setInterval(() => {
       clearInterval(interval);
-      pS += 0.001;
+      pS += 0.005;
       if (gameS > 1) {
         gameS -= 0.02;
       }
@@ -330,63 +340,96 @@ function transitionAll() {
   drawCircle(x, y, width);
   drawPaddle(px, py, pWidth, pHeight);
   drawBricks(fX, fY, brickW, brickH, brickOffsetX, brickOffsetY);
+  drawLastLine();
 }
 
 function checkGameOver() {
   if (y >= bCanvasH - 4) {
     if (score >= bestScore) {
+      localStorage.setItem("bestScore", score);
       alert("New Best Score!!");
     } else {
       alert("you are " + (bestScore - score) + " point from the best score");
     }
     setVariables(ballWidth, bCanvasW / 2, bCanvasH - pSpace - 10, initX, initY);
     px = bCanvasW / 2 - pWidth / 2;
-    clearInterval(interval2);
-    clearInterval(interval);
-    clearInterval(interval3);
-    clearInterval(interval4);
-    interval = null;
-    interval2 = null;
-    interval3 = null;
-    interval4 = null;
+
+    intervalClear();
     // fY = 5;
-    if (score > bestScore) {
-      localStorage.setItem("bestScore", score);
+
+    let bestScoreData = JSON.parse(localStorage.getItem("bestScore"));
+    if (bestScoreData) {
+      bestScore = bestScoreData;
     }
-    bestScore = localStorage.getItem("bestScore");
     console.log(bestScore);
     scoreEl.textContent = bestScore;
   }
 }
+function intervalClear() {
+  clearInterval(interval2);
+  clearInterval(interval);
+  clearInterval(interval3);
+  clearInterval(interval4);
+  interval = null;
+  interval2 = null;
+  interval3 = null;
+  interval4 = null;
+}
 
 function bricksDown() {
+  let copyStorage = [];
+  bricks.forEach((copy, idx) => {
+    copyStorage.push(idx);
+  });
+
   if (!interval3) {
     interval3 = setInterval(() => {
       fY += 22;
-    }, 6000);
+
+      for (let i = 0; i < copyStorage.length; i++) {
+        if (bricks[i].every((copy) => copy.isVisible == false)) {
+          copyStorage.splice(i, 1);
+        }
+      }
+      let lastRow = bricks[copyStorage.length - 1];
+      let lastColumns = lastRow.filter((column) => column.y > 0);
+      lastLine = lastColumns[0].y;
+
+      lineGameOver(lastLine);
+      checkGameOver();
+    }, 2000);
   }
+}
+
+function drawLastLine() {
+  ctx.beginPath();
+  ctx.rect(0, dangerLine, bCanvasW, 2);
+  ctx.fillStyle = "rgba(172, 27, 11,.5)";
+  ctx.fill();
+  ctx.closePath();
+}
+function lineGameOver(line) {
+  if (line > dangerLine) y = bCanvasH;
 }
 
 startBtn.addEventListener("click", start);
 function start() {
+  setVariables(ballWidth, bCanvasW / 2, bCanvasH - pSpace - 10, initX, initY);
+
   lPressed = false;
   rPressed = false;
   pS = 2;
   gameS = 10;
-  score = 0;
-  scoreEl.textContent = score;
+  if (!interval4) {
+    score = 0;
+    scoreEl.textContent = score;
+  }
 
-  brickW = 32.5;
-  brickH = 10;
-  brickOffsetX = 15;
-  brickOffsetY = 20;
   // fx = first x cordinat fy = first y cordinat
-  fX = 15;
-  fY = -975;
+  fX = 12.5;
+  fY = -1250;
   // let fY = 5;
   bricks = [];
-  brickRow = 50;
-  brickColumn = 6;
 
   createBrickArray();
   drawBricks(fX, fY, brickW, brickH, brickOffsetX, brickOffsetY);

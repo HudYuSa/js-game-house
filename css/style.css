@@ -1212,7 +1212,7 @@ button {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  font-size: clamp(3rem, 11vw, 6rem);
+  font-size: clamp(4rem, 12vw, 7rem);
   color: #ffbf1b;
   cursor: pointer;
   display: -webkit-box;
