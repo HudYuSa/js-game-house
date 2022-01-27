@@ -36,8 +36,8 @@ body {
   color: $default-clr;
 
   // hide all game
-  // visibility: hidden;
-  // transform: translateY(-100%);
+  visibility: hidden;
+  transform: translateY(-100%);
   &.reveal {
     animation: reveal 1s ease-in-out 1 forwards;
   }
@@ -69,5 +69,19 @@ body {
     &:last-child {
       transform: rotate(-45deg);
     }
+  }
+}
+
+.other-game {
+  font-family: "pixel", serif;
+  width: 100%;
+  min-height: 100vh;
+  // background-image: url("https://ik.imagekit.io/hudyusuf/space2_l0SJ3YtqAtU.jpg?updatedAt=1641435055686");
+  background-size: cover;
+  background-color: white;
+  padding-top: 3em;
+  h1 {
+    text-align: center;
+    font-size: fontsize(6);
   }
 }

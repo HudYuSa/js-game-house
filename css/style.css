@@ -536,7 +536,6 @@ button {
 }
 
 .ttt {
-  display: none;
   font-family: "pixel", serif;
   width: 100%;
   min-height: 100vh;
@@ -1043,7 +1042,6 @@ button {
 }
 
 .breakout {
-  display: none;
   font-family: "pixel", serif;
   width: 100%;
   min-height: 100vh;
@@ -1285,6 +1283,9 @@ body {
   width: 100%;
   min-height: 100vh;
   color: #ddd;
+  visibility: hidden;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
 .game-wrapper.reveal {
@@ -1335,5 +1336,19 @@ body {
 .close-btn span:last-child {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+.other-game {
+  font-family: "pixel", serif;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-color: white;
+  padding-top: 3em;
+}
+
+.other-game h1 {
+  text-align: center;
+  font-size: clamp(6rem, 11vw, 7rem);
 }
 /*# sourceMappingURL=style.css.map */
