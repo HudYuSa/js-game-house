@@ -1338,6 +1338,23 @@ button {
   color: #3050df;
 }
 
+.tetris__main__content-wrapper .grid {
+  background-color: blue;
+  height: 300px;
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.tetris__main__content-wrapper div {
+  background-color: yellow;
+  height: 20px;
+  width: 20px;
+}
+
 body {
   position: relative;
   background-image: url("https://ik.imagekit.io/hudyusuf/space_1__yb3X8EJ2R.png?updatedAt=1641435200148");

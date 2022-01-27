@@ -1,0 +1,15 @@
+.tetris__main__content-wrapper {
+  .grid {
+    background-color: blue;
+    height: 300px;
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  div {
+    background-color: yellow;
+    height: 20px;
+    width: 20px;
+  }
+}
