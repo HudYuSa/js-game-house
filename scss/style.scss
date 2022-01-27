@@ -1,5 +1,5 @@
 @import "config", "main", "ttt/ttt", "ttt/ttt-main", "breakout/breakout",
-  "breakout/breakout-main";
+  "breakout/breakout-main", "tetris/tetris", "tetris/tetris-main";
 
 body {
   // font-weight: $weight(bold);
@@ -33,8 +33,10 @@ body {
   width: 100%;
   min-height: 100vh;
   color: $default-clr;
-  visibility: hidden;
-  transform: translateY(-100%);
+
+  // hide all game
+  // visibility: hidden;
+  // transform: translateY(-100%);
   &.reveal {
     animation: reveal 1s ease-in-out 1 forwards;
   }

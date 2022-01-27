@@ -43,6 +43,7 @@ let addBox = [
     "breakout",
     "normal"
   ),
+  createBox("tetris-game", "tetris", "./img/weather.png", "tetris", "normal"),
   // createBox("other-game", "other", "./img/weather.png", "other-game", "normal"),
   // createBox("other-game", "other", "./img/calculator.png", "calculator", "height"),
   // createBox("other-game", "other", "./img/calculator.png", "calculator", "height"),

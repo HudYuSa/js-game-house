@@ -16,7 +16,7 @@ py = bCanvasH - pSpace;
 px = bCanvasW / 2 - pWidth / 2;
 
 let lastLine;
-let dangerLine = bCanvasH - pSpace - 50;
+let dangerLine = bCanvasH - pSpace - 20;
 
 function setVariables(inWidth, xP, yP, setDx, setDy) {
   width = inWidth;
@@ -300,11 +300,11 @@ function speedUp() {
       clearInterval(interval);
       pS += 0.005;
       if (gameS > 1) {
-        gameS -= 0.02;
+        gameS -= 0.1;
       }
 
       interval = setInterval(transitionAll, gameS);
-    }, 1000);
+    }, 2000);
   }
 }
 

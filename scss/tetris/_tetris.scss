@@ -1,10 +1,8 @@
-.breakout {
-  display: none;
-
+.tetris {
   font-family: "pixel", serif;
   width: 100%;
   min-height: 100vh;
-  background-image: url("https://ik.imagekit.io/hudyusuf/js-game-house/space3_v4w8Rinke?ik-sdk-version=javascript-1.4.3&updatedAt=1642678570561");
+  background-image: url("https://ik.imagekit.io/hudyusuf/js-game-house/space4_urKQVrQO3?ik-sdk-version=javascript-1.4.3&updatedAt=1643248538319");
   background-size: cover;
   background-color: white;
   padding: 3em 0 5em;
@@ -12,16 +10,17 @@
     // margin-bottom: 2em;
     &__header {
       &__title {
-        & .breakout-title {
+        & .tetris-title {
           font-weight: weight(bold);
           letter-spacing: 3px;
           font-size: fontsize(2.5);
           text-align: center;
-          color: $primary-clr;
+          color: darken($primary-clr, 10%);
+          // text-shadow: 1px 1px 5px $primary-clr;
           // color: color(120,120,300)
         }
-        & .breakout-score {
-          @extend .breakout-title;
+        & .tetris-score {
+          @extend .tetris-title;
           font-size: fontsize(5);
           margin: 0 0.2em;
         }
