@@ -45,6 +45,10 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    @include responsive(480px) {
+      visibility: hidden;
+      display: none;
+    }
     & .controller-b {
       -webkit-touch-callout: none;
       user-select: none;

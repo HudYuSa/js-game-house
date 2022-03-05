@@ -1212,6 +1212,13 @@ button {
           justify-content: space-between;
 }
 
+@media (min-width: 480px) {
+  .breakout__main__content-wrapper__control {
+    visibility: hidden;
+    display: none;
+  }
+}
+
 .breakout__main__content-wrapper__control .controller-b {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
